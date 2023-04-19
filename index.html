@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>js crud</title>
+
+
+    <!--bootstrap css file-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--fontawsome css file-->
+    <link rel="stylesheet" href="css/all.min.css">
+    <!--main stylesheet file-->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="w-75 mx-auto py-5">
+            <h1 class="mb-5">Product managment system</h1>
+            <div class="form-group mb-3">
+                <label for="ProductName">Product Name :</label>
+                <input oninput="validateProductName()" type="text" class="form-control" id="ProductName">
+                <p id="validatedName" class="text-danger my-2"></p>
+            </div>
+            <div class="form-group mb-3">
+                <label for="ProductPrice">Product price :</label>
+                <input oninput="validateProductPrice()" type="number" class="form-control" id="ProductPrice">
+                <p id="validatedprice" class="text-danger my-2"></p>
+            </div>
+            <div class="form-group mb-3">
+                <label for="Productcatagory">Product catagory :</label>
+                <input oninput="validateProductCatagory() " type="text" class="form-control" id="Productcatagory">
+                <p id="validatedcat" class="text-danger my-2"></p>
+            </div>
+            <div class="form-group mb-3">
+                <label for="ProductDescription">Product Description :</label>
+                <textarea oninput="validateProductDesc()" name="ProductDescription" class="form-control"
+                    id="ProductDescription"></textarea>
+                <p id="validatedDesc" class="text-danger my-2"></p>
+            </div>
+            <button onclick="addproduct()" class="btn btn-danger" id="addproductbtn">Add product</button>
+            <button onclick="displayUpdatedProduct(newindex)" class="btn btn-warning d-none"
+                id="updateproductbtn">Update product</button>
+        </div>
+
+
+        <!--real time search-->
+        <div class="w-75 mx-auto py-5">
+            <h4>Search..</h4>
+            <input type="text" class="form-control" oninput="searchName(this.value);">
+            <!--this value = document.getElementById("").value-->
+        </div>
+
+        <table class="table w-75 mx-auto text-primary text-center">
+            <thead>
+                <th>Index</th>
+                <th>ProductName</th>
+                <th>ProductPrice</th>
+                <th>Productcatagory</th>
+                <th>Productdescription</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </thead>
+            <tbody class="text-black" id="tbody">
+
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+    <!--bootstrap js file-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
